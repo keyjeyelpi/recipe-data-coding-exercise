@@ -1,0 +1,462 @@
+{
+  "data": {
+    "recipes": [
+      {
+        "sys": {
+          "id": "recipe_001"
+        },
+        "name": "Tuna Pasta Salad",
+        "nutritionalSummary": {
+          "energy": 2165.97,
+          "fat": 23.935,
+          "fibre": 3.833,
+          "protein": 33.789,
+          "carbohydrate": 39.048,
+          "sodium": 369.75
+        },
+        "yield": 1,
+        "ingredientsCollection": {
+          "total": 13,
+          "items": [
+            {
+              "sys": {
+                "id": "ingredient_001_001"
+              },
+              "measurement": null,
+              "metricMeasurement": 50,
+              "notes": null,
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "75NhwX3NkVIY937HbAdPxr"
+                },
+                "name": "pasta"
+              }
+            },
+            {
+              "sys": {
+                "id": "ingredient_001_002"
+              },
+              "measurement": "1 tsp olive oil",
+              "metricMeasurement": 5,
+              "notes": null,
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "3PrkY3XHCa7VKhRCVpsmOg"
+                },
+                "name": "Olive Oil"
+              }
+            },
+            {
+              "sys": {
+                "id": "ToZ8v6eaDH5FsasDMdC3M"
+              },
+              "measurement": "1 tin of tuna",
+              "metricMeasurement": 100,
+              "notes": "drained",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "1MaoYo95cFH9pF0VJONei0"
+                },
+                "name": "tinned tuna"
+              }
+            },
+            {
+              "sys": {
+                "id": "3VPKFeJCZZUFKHYUTvg0sB"
+              },
+              "measurement": "5 cherry tomatoes",
+              "metricMeasurement": 100,
+              "notes": "halved",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "Hl11QcV3wZfWZ7Nytvdci"
+                },
+                "name": "cherry tomatoes"
+              }
+            },
+            {
+              "sys": {
+                "id": "5FaH9gRN2i8p6QOxJdF4XI"
+              },
+              "measurement": "4 kalamata olives",
+              "metricMeasurement": 11,
+              "notes": "pitted",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "7faxIk3FS97PjYh3YcHfGT"
+                },
+                "name": "Kalamata Olives"
+              }
+            },
+            {
+              "sys": {
+                "id": "6RXOMvgVpKC4SVqM8E7Ocu"
+              },
+              "measurement": "1/8 red onion",
+              "metricMeasurement": 20,
+              "notes": "thinly sliced",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "1XLsish4MmSKo5W0QlTBmv"
+                },
+                "name": "red onion"
+              }
+            },
+            {
+              "sys": {
+                "id": "5eU3dwjTfmHDeKKmDbC5pl"
+              },
+              "measurement": "2 sprigs fresh basil",
+              "metricMeasurement": 1,
+              "notes": "leaves picked",
+              "includedInNutrition": false,
+              "food": {
+                "sys": {
+                  "id": "2UUaTO5owuxEd0r0aCu5Pz"
+                },
+                "name": "fresh basil"
+              }
+            },
+            {
+              "sys": {
+                "id": "76CUcnQmyOMAXHYHfTmnBX"
+              },
+              "heading": "For the dressing:"
+            },
+            {
+              "sys": {
+                "id": "2uQ8vEcv2iOtdHpu5l3P9r"
+              },
+              "measurement": "1 tbsp olive oil",
+              "metricMeasurement": 15,
+              "notes": null,
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "3PrkY3XHCa7VKhRCVpsmOg"
+                },
+                "name": "Olive Oil"
+              }
+            },
+            {
+              "sys": {
+                "id": "3nbXQAbGnXnMwaccGEVmr7"
+              },
+              "measurement": "1 tbsp red wine vinegar",
+              "metricMeasurement": 15,
+              "notes": null,
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "7yJkmXPIrdOYRlfCmfoeNT"
+                },
+                "name": "Red Wine Vinegar"
+              }
+            },
+            {
+              "sys": {
+                "id": "UZce1Xud9KIwBT9cBACC6"
+              },
+              "measurement": "1/2 tsp dried chili flakes",
+              "metricMeasurement": 0.6,
+              "notes": "(optional)",
+              "includedInNutrition": false,
+              "food": {
+                "sys": {
+                  "id": "5TrcRlfrjQ79EUPt3Mxh7o"
+                },
+                "name": "dried chilli flakes"
+              }
+            },
+            {
+              "sys": {
+                "id": "31ihOCQfXXDqAeU8QtvqpA"
+              },
+              "measurement": "sea salt",
+              "metricMeasurement": 0,
+              "notes": "to taste",
+              "includedInNutrition": false,
+              "food": {
+                "sys": {
+                  "id": "6ePHYzAu0uT0offDbXCHYH"
+                },
+                "name": "Sea Salt"
+              }
+            },
+            {
+              "sys": {
+                "id": "1v3pOzFQVaSi263m57Th7O"
+              },
+              "measurement": "ground black pepper",
+              "metricMeasurement": 0,
+              "notes": "to taste",
+              "includedInNutrition": false,
+              "food": {
+                "sys": {
+                  "id": "33lXhGinvhXfc8Anhiqro2"
+                },
+                "name": "Ground Black Pepper"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "sys": {
+          "id": "recipe_002"
+        },
+        "name": "Chicken Stir Fry",
+        "nutritionalSummary": {
+          "energy": 1456.32,
+          "fat": 8.12,
+          "fibre": 4.2,
+          "protein": 28.5,
+          "carbohydrate": 22.8,
+          "sodium": 245.6
+        },
+        "yield": 2,
+        "ingredientsCollection": {
+          "total": 8,
+          "items": [
+            {
+              "sys": {
+                "id": "ing1"
+              },
+              "measurement": "200g chicken breast",
+              "metricMeasurement": 200,
+              "notes": "diced",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "chicken1"
+                },
+                "name": "chicken breast"
+              }
+            },
+            {
+              "sys": {
+                "id": "ing2"
+              },
+              "measurement": "150g mixed vegetables",
+              "metricMeasurement": 150,
+              "notes": "bell peppers, broccoli, carrots",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "veg1"
+                },
+                "name": "mixed vegetables"
+              }
+            },
+            {
+              "sys": {
+                "id": "ing3"
+              },
+              "measurement": "2 tbsp sesame oil",
+              "metricMeasurement": 30,
+              "notes": null,
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "oil1"
+                },
+                "name": "sesame oil"
+              }
+            },
+            {
+              "sys": {
+                "id": "ing4"
+              },
+              "measurement": "2 tbsp soy sauce",
+              "metricMeasurement": 30,
+              "notes": "low sodium",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "sauce1"
+                },
+                "name": "soy sauce"
+              }
+            },
+            {
+              "sys": {
+                "id": "ing5"
+              },
+              "measurement": "1 tsp fresh ginger",
+              "metricMeasurement": 3,
+              "notes": "grated",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "ginger1"
+                },
+                "name": "fresh ginger"
+              }
+            },
+            {
+              "sys": {
+                "id": "ing6"
+              },
+              "measurement": "2 cloves garlic",
+              "metricMeasurement": 6,
+              "notes": "minced",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "garlic1"
+                },
+                "name": "garlic"
+              }
+            },
+            {
+              "sys": {
+                "id": "ing7"
+              },
+              "measurement": "1 green onion",
+              "metricMeasurement": 10,
+              "notes": "sliced",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "onion1"
+                },
+                "name": "green onion"
+              }
+            },
+            {
+              "sys": {
+                "id": "ing8"
+              },
+              "measurement": "1 tsp sesame seeds",
+              "metricMeasurement": 3,
+              "notes": "for garnish",
+              "includedInNutrition": false,
+              "food": {
+                "sys": {
+                  "id": "seeds1"
+                },
+                "name": "sesame seeds"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "sys": {
+          "id": "recipe_003"
+        },
+        "name": "Smoothie Bowl",
+        "nutritionalSummary": {
+          "energy": 892.45,
+          "fat": 12.8,
+          "fibre": 8.9,
+          "protein": 15.2,
+          "carbohydrate": 45.6,
+          "sodium": 45.2
+        },
+        "yield": 1,
+        "ingredientsCollection": {
+          "total": 6,
+          "items": [
+            {
+              "sys": {
+                "id": "smoothie1"
+              },
+              "measurement": "1 frozen banana",
+              "metricMeasurement": 120,
+              "notes": "sliced",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "banana1"
+                },
+                "name": "banana"
+              }
+            },
+            {
+              "sys": {
+                "id": "smoothie2"
+              },
+              "measurement": "100ml coconut milk",
+              "metricMeasurement": 100,
+              "notes": "unsweetened",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "coconutmilk1"
+                },
+                "name": "coconut milk"
+              }
+            },
+            {
+              "sys": {
+                "id": "smoothie3"
+              },
+              "measurement": "50g frozen berries",
+              "metricMeasurement": 50,
+              "notes": "mixed",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "berries1"
+                },
+                "name": "mixed berries"
+              }
+            },
+            {
+              "sys": {
+                "id": "smoothie4"
+              },
+              "measurement": "1 tbsp chia seeds",
+              "metricMeasurement": 12,
+              "notes": null,
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "chia1"
+                },
+                "name": "chia seeds"
+              }
+            },
+            {
+              "sys": {
+                "id": "smoothie5"
+              },
+              "measurement": "1 tbsp almond butter",
+              "metricMeasurement": 16,
+              "notes": null,
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "almondbutter1"
+                },
+                "name": "almond butter"
+              }
+            },
+            {
+              "sys": {
+                "id": "smoothie6"
+              },
+              "measurement": "10g granola",
+              "metricMeasurement": 10,
+              "notes": "for topping",
+              "includedInNutrition": true,
+              "food": {
+                "sys": {
+                  "id": "granola1"
+                },
+                "name": "granola"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
