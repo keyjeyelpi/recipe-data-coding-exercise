@@ -12,7 +12,11 @@
   let servingSize: number = 1;
   let useImperialUnits: boolean = false;
 
-  $: scaledNutrition = scaleNutrition(recipe.nutritionalSummary, servingSize);
+  $: scaledNutrition = scaleNutrition(
+    recipe.nutritionalSummary,
+    servingSize,
+    useImperialUnits
+  );
 
   $: scaledIngredients = scaleIngredients(
     recipe.ingredientsCollection.items,
@@ -55,9 +59,20 @@
           <div class="flex justify-between">
             <span class="capitalize">{key}:</span>
             <span class="font-medium">
-              {value.toFixed(2)}
-              {#if key === "energy"}
+              {value.toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
+              {#if useImperialUnits}
+                {#if key === "energy"}
+                  kCal
+                {:else}
+                  oz
+                {/if}
+              {:else if key === "energy"}
                 kJ
+              {:else if key === "sodium"}
+                mg
               {:else}
                 g
               {/if}
@@ -75,7 +90,11 @@
         class="grid md:grid-cols-4 align-items-stretch md:gap-4 gap-2 text-sm"
       >
         {#each scaledIngredients as ingredient}
-          <div class="p-4 bg-white rounded-lg border">
+          <div
+            class={ingredient.heading
+              ? `md:col-span-4`
+              : `p-4 bg-white rounded-lg border`}
+          >
             {#if ingredient.food}
               <div class="flex justify-between items-start">
                 <span class="flex-1 capitalize">{ingredient.food.name}:</span>

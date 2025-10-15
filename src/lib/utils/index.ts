@@ -4,10 +4,11 @@ import type { ScaledNutrition } from "$lib/types/nutrition";
 import type { Recipe } from "$lib/types/recipe";
 
 export const CONVERSION_CONSTANTS = {
-  GRAMS_TO_OUNCES: 0.035274,
+  GRAMS_TO_OUNCES: 0.0352739907,
   KILOGRAMS_TO_OUNCES: 35.274,
   ML_TO_FL_OZ: 0.033814,
   LITRES_TO_FL_OZ: 33.814,
+  KJ_TO_KCAL: 0.239006,
 } as const;
 
 export const VALIDATION_CONSTANTS = {
@@ -38,15 +39,28 @@ export function isLiquidIngredient(name: string): boolean {
 
 export function scaleNutrition(
   nutrition: Recipe["nutritionalSummary"],
-  servingMultiplier: number
+  desiredServings: number,
+  useImperialUnits = false
 ): ScaledNutrition {
   return {
-    energy: nutrition.energy * servingMultiplier,
-    fat: nutrition.fat * servingMultiplier,
-    fibre: nutrition.fibre * servingMultiplier,
-    protein: nutrition.protein * servingMultiplier,
-    carbohydrate: nutrition.carbohydrate * servingMultiplier,
-    sodium: nutrition.sodium * servingMultiplier,
+    energy:
+      (nutrition.energy * desiredServings) /
+      (useImperialUnits ? CONVERSION_CONSTANTS.KJ_TO_KCAL : 1),
+    fat:
+      (nutrition.fat * desiredServings) /
+      (useImperialUnits ? CONVERSION_CONSTANTS.GRAMS_TO_OUNCES : 1),
+    fibre:
+      (nutrition.fibre * desiredServings) /
+      (useImperialUnits ? CONVERSION_CONSTANTS.GRAMS_TO_OUNCES : 1),
+    protein:
+      (nutrition.protein * desiredServings) /
+      (useImperialUnits ? CONVERSION_CONSTANTS.GRAMS_TO_OUNCES : 1),
+    carbohydrate:
+      (nutrition.carbohydrate * desiredServings) /
+      (useImperialUnits ? CONVERSION_CONSTANTS.GRAMS_TO_OUNCES : 1),
+    sodium:
+      (nutrition.sodium * desiredServings) /
+      (useImperialUnits ? CONVERSION_CONSTANTS.GRAMS_TO_OUNCES / 1000 : 1),
   };
 }
 
