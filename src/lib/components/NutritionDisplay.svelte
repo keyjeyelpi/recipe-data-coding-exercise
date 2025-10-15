@@ -59,23 +59,7 @@
           <div class="flex justify-between">
             <span class="capitalize">{key}:</span>
             <span class="font-medium">
-              {value.toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}
-              {#if useImperialUnits}
-                {#if key === "energy"}
-                  kCal
-                {:else}
-                  oz
-                {/if}
-              {:else if key === "energy"}
-                kJ
-              {:else if key === "sodium"}
-                mg
-              {:else}
-                g
-              {/if}
+              {value}
             </span>
           </div>
         {/each}

@@ -8,10 +8,10 @@ export interface NutritionalSummary {
 }
 
 export interface ScaledNutrition {
-  energy: number;
-  fat: number;
-  fibre: number;
-  protein: number;
-  carbohydrate: number;
-  sodium: number;
+  energy: string;
+  fat: string;
+  fibre: string;
+  protein: string;
+  carbohydrate: string;
+  sodium: string;
 }

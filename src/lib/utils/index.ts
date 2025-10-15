@@ -5,6 +5,7 @@ import type { Recipe } from "$lib/types/recipe";
 
 export const CONVERSION_CONSTANTS = {
   GRAMS_TO_OUNCES: 0.0352739907,
+  MILLIGRAMS_TO_OUNCES: 0.0000352739907,
   KILOGRAMS_TO_OUNCES: 35.274,
   ML_TO_FL_OZ: 0.033814,
   LITRES_TO_FL_OZ: 33.814,
@@ -42,25 +43,35 @@ export function scaleNutrition(
   desiredServings: number,
   useImperialUnits = false
 ): ScaledNutrition {
+  const total = ({
+    value,
+    isEnergy,
+    isMg,
+  }: {
+    value: number;
+    isEnergy?: boolean;
+    isMg?: boolean;
+  }) =>
+    useImperialUnits
+      ? convertToImperial({ value, isEnergy, isMg })
+      : formatMetric({ value, isEnergy, isMg });
   return {
-    energy:
-      (nutrition.energy * desiredServings) /
-      (useImperialUnits ? CONVERSION_CONSTANTS.KJ_TO_KCAL : 1),
-    fat:
-      (nutrition.fat * desiredServings) /
-      (useImperialUnits ? CONVERSION_CONSTANTS.GRAMS_TO_OUNCES : 1),
-    fibre:
-      (nutrition.fibre * desiredServings) /
-      (useImperialUnits ? CONVERSION_CONSTANTS.GRAMS_TO_OUNCES : 1),
-    protein:
-      (nutrition.protein * desiredServings) /
-      (useImperialUnits ? CONVERSION_CONSTANTS.GRAMS_TO_OUNCES : 1),
-    carbohydrate:
-      (nutrition.carbohydrate * desiredServings) /
-      (useImperialUnits ? CONVERSION_CONSTANTS.GRAMS_TO_OUNCES : 1),
-    sodium:
-      (nutrition.sodium * desiredServings) /
-      (useImperialUnits ? CONVERSION_CONSTANTS.GRAMS_TO_OUNCES / 1000 : 1),
+    energy: total({
+      value: nutrition.energy * desiredServings,
+      isEnergy: true,
+    }),
+    fat: total({ value: nutrition.fat * desiredServings }),
+    fibre: total({ value: nutrition.fibre * desiredServings }),
+    protein: total({
+      value: nutrition.protein * desiredServings,
+    }),
+    carbohydrate: total({
+      value: nutrition.carbohydrate * desiredServings,
+    }),
+    sodium: total({
+      value: nutrition.sodium * desiredServings,
+      isMg: true,
+    }),
   };
 }
 
@@ -86,8 +97,8 @@ export function scaleIngredient(
     ...ingredient,
     scaledAmount,
     displayAmount: useImperialUnits
-      ? convertToImperial(scaledAmount, isLiquid)
-      : formatMetric(scaledAmount, isLiquid),
+      ? convertToImperial({ value: scaledAmount, isLiquid })
+      : formatMetric({ value: scaledAmount, isLiquid }),
   };
 }
 
