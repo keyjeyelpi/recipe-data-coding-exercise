@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "moduleResolution": "bundler",
+        "module": "esnext",
+        "target": "esnext",
+        "ignoreDeprecations": "6.0",
+        "allowImportingTsExtensions": true,
+        "verbatimModuleSyntax": true,
+        "noEmit": true,
+        "types": [
+            "svelte",
+            "vite/client",
+            "vitest/globals"
+        ]
+    },
+    "include": [
+        "src/**/*.d.ts",
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/**/*.svelte",
+        "tests/**/*.ts",
+        "tests/**/*.js",
+        "vite.config.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        ".svelte-kit",
+        "build",
+        "dist"
+    ],
+    "extends": "./.svelte-kit/tsconfig.json"
+}
