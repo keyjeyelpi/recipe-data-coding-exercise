@@ -134,8 +134,8 @@ describe("Recipe Test Scenarios Integration", () => {
       ];
 
       testCases.forEach(({ amount, isLiquid, metric, imperial, source }) => {
-        expect(formatMetric(amount, isLiquid)).toBe(metric);
-        expect(convertToImperial(amount, isLiquid)).toBe(imperial);
+        expect(formatMetric({ value: amount, isLiquid })).toBe(metric);
+        expect(convertToImperial({ value: amount, isLiquid })).toBe(imperial);
       });
     });
 
@@ -206,13 +206,19 @@ describe("Recipe Test Scenarios Integration", () => {
               liquidCount++;
               // Verify liquid formatting
               expect(
-                formatMetric(ingredient.metricMeasurement, true)
+                formatMetric({
+                  value: ingredient.metricMeasurement,
+                  isLiquid: true,
+                })
               ).toContain("ml");
             } else {
               solidCount++;
               // Verify solid formatting
               expect(
-                formatMetric(ingredient.metricMeasurement, false)
+                formatMetric({
+                  value: ingredient.metricMeasurement,
+                  isLiquid: false,
+                })
               ).toContain("g");
             }
           }
@@ -259,8 +265,10 @@ describe("Recipe Test Scenarios Integration", () => {
 
       // Test conversion of edge cases
       verySmallMeasurements.forEach((item) => {
-        expect(formatMetric(item.amount)).toContain("g");
-        expect(convertToImperial(item.amount)).toMatch(/0\.\d{2} oz/);
+        expect(formatMetric({ value: item.amount })).toContain("g");
+        expect(convertToImperial({ value: item.amount })).toMatch(
+          /0\.\d{2} oz/
+        );
       });
     });
   });
@@ -306,8 +314,8 @@ describe("Recipe Test Scenarios Integration", () => {
               displayAmount:
                 scaledAmount > 0
                   ? useImperialUnits
-                    ? convertToImperial(scaledAmount, isLiquid)
-                    : formatMetric(scaledAmount, isLiquid)
+                    ? convertToImperial({ value: scaledAmount, isLiquid })
+                    : formatMetric({ value: scaledAmount, isLiquid })
                   : "to taste",
               isLiquid,
               notes: ingredient.notes,
