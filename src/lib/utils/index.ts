@@ -55,6 +55,8 @@ export function scaleNutrition(
     useImperialUnits
       ? convertToImperial({ value, isEnergy, isMg })
       : formatMetric({ value, isEnergy, isMg });
+      
+
   return {
     energy: total({
       value: nutrition.energy * desiredServings,

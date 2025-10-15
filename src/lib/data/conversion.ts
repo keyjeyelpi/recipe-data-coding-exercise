@@ -6,6 +6,15 @@ import type {
 import { CONVERSION_CONSTANTS } from "$lib/utils";
 
 const formatMetricDecimal = (value: number): string => {
+  if (value === 0) return "0";
+
+  if (value < 1) {
+    return value.toLocaleString(undefined, {
+      minimumFractionDigits: 4,
+      maximumFractionDigits: 4,
+    });
+  }
+
   return value.toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
@@ -13,6 +22,15 @@ const formatMetricDecimal = (value: number): string => {
 };
 
 const formatImperialDecimal = (value: number): string => {
+  if (value === 0) return "0";
+
+  if (value < 1) {
+    return value.toLocaleString(undefined, {
+      minimumFractionDigits: 4,
+      maximumFractionDigits: 4,
+    });
+  }
+
   return value.toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
@@ -43,9 +61,10 @@ export const formatMetric: FormatMetricFunction = ({
       ? `${formatMetricDecimal(value / 1000)} l`
       : `${value} ml`;
   }
+
   return value >= 1000
     ? `${formatMetricDecimal(value / 1000)} kg`
-    : `${value} g`;
+    : `${formatMetricDecimal(value)} g`;
 };
 
 export const convertToImperial: ConvertToImperialFunction = ({
