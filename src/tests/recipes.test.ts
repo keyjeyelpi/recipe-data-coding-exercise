@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import recipesData from "../lib/data/recipes.json";
+import recipesData from "$lib/data/recipes.json";
 
 describe("Recipe Data Test Scenarios", () => {
   const recipes = recipesData.data.recipes;
@@ -17,7 +17,6 @@ describe("Recipe Data Test Scenarios", () => {
     it("should have variety of ingredient measurement types", () => {
       const ingredients = tunaSalad!.ingredientsCollection.items;
 
-      // Should have ingredients with different measurement scales
       const measurements = ingredients
         .filter((item) => item.food && item.metricMeasurement > 0)
         .map((item) => item.metricMeasurement);
@@ -88,7 +87,6 @@ describe("Recipe Data Test Scenarios", () => {
         .filter((item) => item.food && item.metricMeasurement > 0)
         .map((item) => item.metricMeasurement);
 
-      // Should have larger base portions
       expect(measurements).toContain(200); // Chicken breast
       expect(measurements).toContain(150); // Mixed vegetables
       expect(measurements).toContain(30); // Oil and sauce portions (2 tbsp each)
@@ -97,11 +95,9 @@ describe("Recipe Data Test Scenarios", () => {
     it("should test serving size scaling calculations", () => {
       const nutrition = stirFry!.nutritionalSummary;
 
-      // Per serving nutrition (recipe serves 2)
       expect(nutrition.energy).toBe(1456.32);
       expect(nutrition.protein).toBe(28.5);
 
-      // Test scaling for different serving sizes
       const perPersonProtein = nutrition.protein;
       const for4PeopleProtein = perPersonProtein * 4;
       const for1PersonProtein = perPersonProtein;
@@ -146,7 +142,6 @@ describe("Recipe Data Test Scenarios", () => {
       expect(liquidIngredient).toBeDefined();
       expect(liquidIngredient!.metricMeasurement).toBe(100); // ml
 
-      // Should have smaller, more precise measurements
       const measurements = ingredients
         .filter((item) => item.food && item.metricMeasurement > 0)
         .map((item) => item.metricMeasurement)
@@ -197,12 +192,10 @@ describe("Recipe Data Test Scenarios", () => {
         proteinPerServing: recipe.nutritionalSummary.protein,
       }));
 
-      // Each recipe should have different nutrition values
       const energyValues = nutritionData.map((n) => n.energyPerServing);
       const uniqueEnergyValues = new Set(energyValues);
       expect(uniqueEnergyValues.size).toBe(recipes.length);
 
-      // Protein content should vary significantly
       const proteinValues = nutritionData.map((n) => n.proteinPerServing);
       expect(
         Math.max(...proteinValues) - Math.min(...proteinValues)
@@ -249,7 +242,6 @@ describe("Recipe Data Test Scenarios", () => {
       expect(allMeasurements.some((m) => m < 1)).toBe(true); // Sub-gram measurements
       expect(allMeasurements.some((m) => m >= 100)).toBe(true); // Large measurements
 
-      // Should have good range of measurement sizes
       const nonZeroMeasurements = allMeasurements.filter((m) => m > 0);
       const minMeasurement = Math.min(...nonZeroMeasurements);
       const maxMeasurement = Math.max(...allMeasurements);

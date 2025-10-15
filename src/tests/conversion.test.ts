@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { formatMetric, convertToImperial } from "../lib/data/conversion";
+import { formatMetric, convertToImperial } from "$lib/data/conversion";
 
 describe("Unit Conversion Functions", () => {
   describe("formatMetric", () => {

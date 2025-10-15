@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import recipesData from "../lib/data/recipes.json";
-import { formatMetric, convertToImperial } from "../lib/data/conversion";
+import recipesData from "$lib/data/recipes.json";
+import { formatMetric, convertToImperial } from "$lib/data/conversion";
 
 describe("NutritionDisplay Test Scenarios", () => {
   const recipes = recipesData.data.recipes;
