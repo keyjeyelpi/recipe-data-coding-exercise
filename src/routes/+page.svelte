@@ -1,8 +1,6 @@
-<script>
-  import recipesData from "$lib/data/recipes.json";
-  import NutritionDisplay from "$lib/components/NutritionDisplay.svelte";
-
-  // TODO: Import your NutritionDisplay component here
+<script lang="ts">
+  import * as recipesData from "../lib/data/recipes.json";
+  import NutritionDisplay from "../lib/components/NutritionDisplay.svelte";
 
   const recipes = recipesData.data.recipes;
   let selectedRecipe = recipes[0];
@@ -45,8 +43,7 @@
     </div>
   </section>
 
-  <section class="mb-8">
+  <section>
     <NutritionDisplay recipe={selectedRecipe} />
   </section>
-
 </main>
